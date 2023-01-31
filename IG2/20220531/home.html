@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>Salary Calculator</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<form action="salary.php" method="post" class="slidecontainer">
+			<!--Input regularhour as slider-->
+			<label for="regularhour">Regular Hours:</label>
+			<span id="range" id="demo">0</span>
+			<input
+				type="range"
+				name="regularhour"
+				min="0"
+				max="24"
+				value="0"
+				onchange="showValue(this.value)"
+				class="slider"
+				id="myRange"
+			/>
+
+			<br />
+			<!--Input overtimehour as slider-->
+			<label for="overtimehour">Overtime Hours:</label>
+			<span id="range" id="demo">0</span>
+			<input
+				type="range"
+				name="overtimehour"
+				min="0"
+				max="24"
+				value="0"
+				onchange="showValue(this.value)"
+				class="slider"
+				id="myRange"
+			/>
+
+			<br />
+			<!--Input wagerate-->
+			<label for="wagerate">Wage Rate:</label>
+			<input type="text" name="wagerate" id="wagerate" />
+			<br />
+			<!--Input submit-->
+			<input type="submit" value="Calculate" />
+		</form>
+		<script>
+			var slider = document.getElementById("myRange");
+			var output = document.getElementById("demo");
+			output.innerHTML = slider.value;
+
+			slider.oninput = function () {
+				output.innerHTML = this.value;
+			};
+		</script>
+	</body>
+</html>

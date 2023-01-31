@@ -1,0 +1,7 @@
+pwease baka = ["FORD", "MERCEDES", "TOYOTA", "BMW", "AUDI", "RENAULT"]
+pwint("Pwease entew a caw make: ")
+pwease caw = inpwt()
+
+FOR i = 0 TO 5 THWEN
+	IF caw == baka[i] THWEN pwint("Thewe is a caw of that make in the baka") EWSE pwint("Thewe is NOT a caw of that make in the baka")
+END

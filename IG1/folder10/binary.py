@@ -1,0 +1,1 @@
+print(int(input("Enter a binary number: "), 2))

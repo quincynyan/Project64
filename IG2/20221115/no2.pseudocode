@@ -1,0 +1,46 @@
+START
+# Calculator
+
+again = "y"
+REPEAT
+	SEND "Select operation." TO DISPLAY
+	SEND "1.Add" TO DISPLAY
+	SEND "2.Subtract" TO DISPLAY
+	SEND "3.Multiply" TO DISPLAY
+	SEND "4.Divide" TO DISPLAY
+
+	valid = false
+	REPEAT
+		SEND "Enter choice(1/2/3/4):" TO DISPLAY
+		RECEIVE choice FROM KEYBOARD
+		IF choice > 0 AND choice < 5 THEN
+			valid = true
+		END IF
+	UNTIL valid
+
+	SEND "Enter first number:" TO DISPLAY
+	RECEIVE num1 FROM KEYBOARD
+	SEND "Enter second number:" TO DISPLAY
+	RECEIVE num2 FROM KEYBOARD
+
+	IF choice = 1 THEN
+		result = num1 + num2
+		o = " + "
+	ELSE IF choice = 2 THEN
+		result = num1 - num2
+		o = " - "
+	ELSE IF choice = 3 THEN
+		result = num1 * num2
+		o = " * "
+	ELSE IF choice = 4 THEN
+		result = num1 / num2
+		o = " / "
+	END IF
+
+	SEND num1 & o & num2 & " = " & result TO DISPLAY
+
+	SEND "Do you want to calculate again? (y/n)" TO DISPLAY
+	RECEIVE again FROM KEYBOARD
+UNTIL again = "n"
+
+END

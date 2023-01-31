@@ -1,0 +1,13 @@
+START
+INPUT regularhours
+INPUT overtimehours
+INPUT wagerate
+
+Regularpay = regularhours * wagerate
+overtimepay = overtimehours * wagerate * 1.5
+weeklypay = Regularpay + overtimepay
+
+OUTPUT "The regular pay is: " + Regularpay
+OUTPUT "The overtime pay is: " + overtimepay
+OUTPUT "The weekly pay is: " + weeklypay
+END

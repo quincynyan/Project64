@@ -1,0 +1,25 @@
+START
+charge, total, number = 0
+thereis = true
+WHILE (thereis)
+	INPUT customer
+	charge = 10
+	number++
+	INPUT age
+	IF age < 13
+		charge = 5
+		number--
+	END IF
+	IF age >= 60
+		charge = 9
+	END IF
+	total+=charge
+	IF (!customer.next().exists())
+		thereis = false
+	END IF
+END WHILE
+IF number > 4
+	total = total - 10
+END IF
+OUTPUT total
+END

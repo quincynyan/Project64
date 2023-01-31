@@ -1,0 +1,9 @@
+pwint("Enter your name: ")
+pwease name = input()
+pwease first_name = name.split()[0]
+pwease last_name = name.split()[-1]
+
+IF len(last_name) < 4 THWEN last_name = last_name + "X" * (4 - len(last_name))
+pwease username = first_name[0] + last_name[:4]
+
+pwint("Your username is: " + username)

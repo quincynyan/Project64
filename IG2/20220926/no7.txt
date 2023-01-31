@@ -1,0 +1,35 @@
+START
+OUTPUT "Enter weight in kg: "
+INPUT w
+c = 0
+IF w > 0 THEN
+	c += 3
+	IF w >= 2 THEN
+		IF w <=10 THEN
+			c += 2+(w-2)
+		ELSE
+			c += 16+(3*(w-10))
+		END IF
+	END IF
+END IF
+OUTPUT "Cost: " + c
+END
+
+
+
+START
+SEND "Enter weight in kg: " TO DISPLAY
+RECEIVE w FROM KEYBOARD (INTEGER)
+c = 0
+IF w > 0 THEN
+	c += 3
+	IF w >= 2 THEN
+		IF w <=10 THEN
+			c += 2+(w-2)
+		ELSE
+			c += 16+(3*(w-10))
+		END IF
+	END IF
+END IF
+SEND "Cost: " + c TO DISPLAY
+END
