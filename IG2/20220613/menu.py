@@ -30,7 +30,19 @@ def ride(stdscr):
         elif c == curses.KEY_DOWN and option < len(classes) - 1:
             option += 1
 
-    stdscr.addstr("You have selected {0}".format(classes[option]))
+    selected_vehicle = classes[option]
+    stdscr.addstr("You have selected {0}".format(selected_vehicle))
+
+    # Call your desired function here
+    if selected_vehicle == "Bike":
+        num_riders = 1
+    elif selected_vehicle == "Car":
+        num_riders = 4
+    elif selected_vehicle == "SUV":
+        num_riders = 7
+    stdscr.addstr("\n{0} riders can ride the {1}".format(
+        num_riders, selected_vehicle))
+
     stdscr.getch()
 
 
